@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Aplicaçııes PRO | HAlexandre</title>
+    <title>Painel de Aplicações PRO | HAlexandre</title>
     <meta name="description" content="Dashboard pessoal para gerenciar links e ferramentas favoritas.">
     <meta name="author" content="HAlexandre">
     <meta name="theme-color" content="#0ea5e9">
@@ -93,7 +93,7 @@
             backdrop-filter: blur(4px);
         }
 
-        /* Notificaçııo Toast */
+        /* Notificação Toast */
         .notification {
             transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
         }
@@ -116,7 +116,7 @@
                 <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-start">
                     <div class="flex items-center gap-3">
                         <div class="relative group cursor-pointer">
-                            <img src="LOGO_HERBERT_LEMOS.png" alt="Logo" class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-700 shadow-sm group-hover:scale-105 transition-transform">
+                            <img src="LOGO_HERBERT_LEMOS.png" alt="Logo" class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-700 shadow-sm group-hover:scale-105 transition-transform" onerror="this.src='https://ui-avatars.com/api/?name=HA&background=0ea5e9&color=fff'">
                             <div class="absolute inset-0 rounded-full ring-1 ring-black/5 dark:ring-white/10"></div>
                         </div>
                         <div>
@@ -181,16 +181,16 @@
     </footer>
 
     <!-- FAB (Floating Action Button) -->
-    <button id="addAppBtn" class="floating-action fixed bottom-6 right-6 w-14 h-14 rounded-full text-white flex items-center justify-center shadow-xl z-40 group" title="Adicionar Aplicaçııo">
+    <button id="addAppBtn" class="floating-action fixed bottom-6 right-6 w-14 h-14 rounded-full text-white flex items-center justify-center shadow-xl z-40 group" title="Adicionar Aplicação">
         <i class="fas fa-plus text-xl transition-transform group-hover:rotate-90"></i>
     </button>
 
-    <!-- Modal de Ediçııo/Criaçııo -->
+    <!-- Modal de Edição/Criação -->
     <div id="modal" class="fixed inset-0 modal-backdrop flex items-center justify-center p-4 hidden z-50 opacity-0 transition-opacity duration-300">
         <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl w-full max-w-lg transform scale-95 transition-transform duration-300 border border-slate-100 dark:border-slate-700 overflow-hidden flex flex-col max-h-[90vh]">
             
             <div class="p-6 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50">
-                <h2 id="modalTitle" class="text-xl font-bold text-slate-800 dark:text-white">Nova Aplicaçııo</h2>
+                <h2 id="modalTitle" class="text-xl font-bold text-slate-800 dark:text-white">Nova Aplicação</h2>
                 <button id="closeModalBtn" class="text-slate-400 hover:text-red-500 transition-colors">
                     <i class="fas fa-times text-xl"></i>
                 </button>
@@ -217,18 +217,19 @@
                         <div>
                             <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">Categoria</label>
                             <select id="appCategory" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-brand-500 outline-none transition-all dark:text-white appearance-none">
-                                <option value="ferramentas">🛠️ Ferramentas</option>
-                                <option value="financas">💰 Financas</option>
-                                <option value="produtividade">⚡ Produtividade</option>
-                                <option value="social">💬 Social</option>
-                                <option value="outros">🧩 Outros</option>
+                                <option value="Produtividade">⚡ Produtividade</option>
+                                <option value="Contabilidade">📈 Contabilidade</option>
+                                <option value="Utilitários">🛠️ Utilitários</option>
+                                <option value="Finanças">💰 Finanças</option>
+                                <option value="Social">💬 Social</option>
+                                <option value="Outros">🧩 Outros</option>
                             </select>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">Descriçııo (Opcional)</label>
-                        <textarea id="appDescription" rows="2" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-brand-500 outline-none transition-all dark:text-white resize-none" placeholder="Breve descriçııo..."></textarea>
+                        <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">Descrição (Opcional)</label>
+                        <textarea id="appDescription" rows="2" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-brand-500 outline-none transition-all dark:text-white resize-none" placeholder="Breve descrição..."></textarea>
                     </div>
                 </form>
             </div>
@@ -243,7 +244,7 @@
     <!-- Scripts -->
     <script type="module">
         // ============================================
-        // CONFIGURAÇıÍıO - SEUS LINKS FIXOS AQUI
+        // CONFIGURAÇÃO - SEUS LINKS FIXOS AQUI
         // ============================================
         const APPS_FIXOS = [
             {
@@ -253,35 +254,27 @@
                 category: 'Produtividade',
                 description: 'Simplifique a edição e o gerenciamento de seus PDFs.'
             },
-			{
+            {
                 id: '2',
                 title: 'Calculadora de Impostos',
                 link: 'https://halexandre1.github.io/CalculadoraImpostos/',
                 category: 'Contabilidade',
                 description: 'Calculadora profissional para análise e detalhamento de retenções em notas fiscais.'
             },
-			{
+            {
                 id: '3',
                 title: 'Consulta CNPJ',
                 link: 'https://halexandre1.github.io/ConsultaCNPJ/',
                 category: 'Utilitários',
                 description: 'Ferramenta ágil para consulta e verificação rápida de dados cadastrais de empresas através do CNPJ.'
             },
-			{
+            {
                 id: '4',
                 title: 'Extrator de Números',
                 link: 'https://halexandre1.github.io/Extrair_Numeros/',
                 category: 'Utilitários',
                 description: 'Ferramenta prática para limpar textos e extrair apenas os dígitos numéricos, ideal para formatação rápida de dados.'
-            },
-            // Adicione mais links aqui seguindo o modelo acima:
-            // {
-            //     id: '2',
-            //     title: 'Nome do Site',
-            //     link: 'https://exemplo.com',
-            //     category: 'produtividade',
-            //     description: 'Descriçııo opcional'
-            // },
+            }
         ];
         // ============================================
 
@@ -304,11 +297,12 @@
             },
 
             categoryIcons: {
-                ferramentas: { icon: 'fa-tools', color: 'text-blue-500', bg: 'bg-blue-100 dark:bg-blue-900/30' },
-                financas: { icon: 'fa-coins', color: 'text-green-500', bg: 'bg-green-100 dark:bg-green-900/30' },
-                produtividade: { icon: 'fa-rocket', color: 'text-purple-500', bg: 'bg-purple-100 dark:bg-purple-900/30' },
-                social: { icon: 'fa-comments', color: 'text-pink-500', bg: 'bg-pink-100 dark:bg-pink-900/30' },
-                outros: { icon: 'fa-shapes', color: 'text-slate-500', bg: 'bg-slate-100 dark:bg-slate-700/50' }
+                'Utilitários': { icon: 'fa-tools', color: 'text-blue-500', bg: 'bg-blue-100 dark:bg-blue-900/30' },
+                'Contabilidade': { icon: 'fa-chart-line', color: 'text-emerald-500', bg: 'bg-emerald-100 dark:bg-emerald-900/30' },
+                'Finanças': { icon: 'fa-coins', color: 'text-green-500', bg: 'bg-green-100 dark:bg-green-900/30' },
+                'Produtividade': { icon: 'fa-rocket', color: 'text-purple-500', bg: 'bg-purple-100 dark:bg-purple-900/30' },
+                'Social': { icon: 'fa-comments', color: 'text-pink-500', bg: 'bg-pink-100 dark:bg-pink-900/30' },
+                'Outros': { icon: 'fa-shapes', color: 'text-slate-500', bg: 'bg-slate-100 dark:bg-slate-700/50' }
             },
 
             init() {
@@ -367,7 +361,11 @@
                 this.dom.empty.classList.remove('flex');
 
                 apps.forEach((app, index) => {
-                    const catStyle = this.categoryIcons[app.category] || this.categoryIcons.outros;
+                    // Match category case-insensitively or default to 'Outros'
+                    const catKey = Object.keys(this.categoryIcons).find(k => k.toLowerCase() === app.category.toLowerCase());
+                    const catStyle = catKey ? this.categoryIcons[catKey] : this.categoryIcons['Outros'];
+                    const displayCategory = catKey || app.category; // Ensure correct casing
+
                     const domain = new URL(app.link).hostname;
                     const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
 
@@ -378,11 +376,11 @@
                     card.innerHTML = `
                         <div class="flex justify-between items-start mb-4">
                             <div class="flex items-center gap-3 overflow-hidden">
-                                <img src="${faviconUrl}" alt="icon" class="w-10 h-10 rounded-lg bg-slate-50 dark:bg-slate-700 p-1 object-contain shadow-sm border border-slate-100 dark:border-slate-600" onerror="this.src='https://ui-avatars.com/api/?name=${app.title}&background=random'">
+                                <img src="${faviconUrl}" alt="icon" class="w-10 h-10 rounded-lg bg-slate-50 dark:bg-slate-700 p-1 object-contain shadow-sm border border-slate-100 dark:border-slate-600" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(app.title)}&background=random'">
                                 <div class="min-w-0">
                                     <h3 class="font-bold text-slate-800 dark:text-white truncate text-lg">${app.title}</h3>
                                     <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full ${catStyle.bg} ${catStyle.color}">
-                                        ${app.category}
+                                        ${displayCategory}
                                     </span>
                                 </div>
                             </div>
@@ -397,7 +395,7 @@
                             </div>
                         </div>
                         
-                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-grow line-clamp-2">${app.description || 'Sem descriçııo.'}</p>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 flex-grow line-clamp-2">${app.description || 'Sem descrição.'}</p>
                         
                         <div class="flex gap-3 mt-auto">
                             <a href="${app.link}" target="_blank" class="flex-1 bg-slate-50 dark:bg-slate-700/50 hover:bg-brand-50 dark:hover:bg-brand-900/30 border border-slate-200 dark:border-slate-600 hover:border-brand-200 dark:hover:border-brand-700 text-slate-700 dark:text-slate-200 font-semibold py-2.5 px-4 rounded-xl transition-all text-center flex items-center justify-center gap-2 group/btn">
@@ -518,10 +516,10 @@
                     const id = inputs.id.value;
                     if (id) {
                         await Storage.update(id, appData);
-                        UI.showToast('Aplicaçııo atualizada!');
+                        UI.showToast('Aplicação atualizada!');
                     } else {
                         await Storage.add(appData);
-                        UI.showToast('Aplicaçııo criada!');
+                        UI.showToast('Aplicação criada!');
                     }
                     UI.toggleModal(false);
                 };
@@ -543,9 +541,18 @@
                 UI.dom.inputs.id.value = app.id;
                 UI.dom.inputs.title.value = app.title;
                 UI.dom.inputs.link.value = app.link;
-                UI.dom.inputs.cat.value = app.category;
+                
+                // Attempt to match category ignoring case, default to existing logic if it fails
+                const catOptions = Array.from(UI.dom.inputs.cat.options);
+                const matchingOption = catOptions.find(opt => opt.value.toLowerCase() === app.category.toLowerCase());
+                if(matchingOption) {
+                     UI.dom.inputs.cat.value = matchingOption.value;
+                } else {
+                     UI.dom.inputs.cat.value = app.category;
+                }
+
                 UI.dom.inputs.desc.value = app.description || '';
-                UI.dom.modal.querySelector('h2').textContent = 'Editar Aplicaçııo';
+                UI.dom.modal.querySelector('h2').textContent = 'Editar Aplicação';
                 UI.toggleModal(true);
             }
         };
@@ -553,14 +560,44 @@
         window.deleteApp = async (id) => {
             if (confirm('Tem certeza que deseja excluir esta ferramenta?')) {
                 await Storage.remove(id);
-                UI.showToast('Aplicaçııo removida.', 'error');
+                UI.showToast('Aplicação removida.', 'error');
             }
         };
 
         window.copyLink = (url) => {
-            navigator.clipboard.writeText(url);
-            UI.showToast('Link copiado!');
+            // Updated clipboard method to handle iframe restrictions gracefully
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(url).then(() => {
+                    UI.showToast('Link copiado!');
+                }).catch(err => {
+                    console.error('Failed to copy via Clipboard API', err);
+                    fallbackCopyTextToClipboard(url);
+                });
+            } else {
+                fallbackCopyTextToClipboard(url);
+            }
         };
+
+        function fallbackCopyTextToClipboard(text) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed"; // Avoid scrolling to bottom
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                var successful = document.execCommand('copy');
+                if (successful) {
+                    UI.showToast('Link copiado!');
+                } else {
+                    UI.showToast('Erro ao copiar', 'error');
+                }
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+                UI.showToast('Erro ao copiar', 'error');
+            }
+            document.body.removeChild(textArea);
+        }
 
         // Start
         App.init();
